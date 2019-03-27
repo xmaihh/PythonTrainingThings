@@ -34,7 +34,7 @@ def get():
     bsObj=BeautifulSoup(html.content,'lxml')
     print(bsObj.image)
     '''
-    driver = webdriver.Chrome("E:\Python\ysts8download\chromedriver\chromedriver.exe")
+    driver = webdriver.Chrome()
     # driver = webdriver.Firefox()
     down_url = ['0'] * (N - INIT + 1)
     i = INIT
