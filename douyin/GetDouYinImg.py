@@ -34,3 +34,4 @@ if __name__ == '__main__':
     face_dict = getBaiduFaceTech("douyin.jpg", token)
     # 得到的数据进行分析
     # faceinfoAnalysis(face_dict)
+
