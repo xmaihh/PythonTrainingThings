@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-from wxpy import *
 import math
-import PIL.Image as Image
 import os
-import sys
 import shutil
+
+import PIL.Image as Image
+from wxpy import *
 
 
 #
-## 获取文件所在的绝对路径
+# 获取文件所在的绝对路径
 def get_dir(sys_arg):
     sys_arg = sys_arg.split("/")
 
@@ -84,7 +84,6 @@ bot.file_helper.send_msg("您的好友头像照片墙制作完毕")
 print(curr_dir + 'all.jpg')
 bot.file_helper.send_file(curr_dir + 'all.jpg')
 
-
 try:
     shutil.rmtree(curr_dir + "group-images/")
     print("收尾，清理临时文件")
@@ -92,8 +91,3 @@ except FileNotFoundError:
     print("没什么好删的")
 
 print("！！！\n生成完毕了，放在了目录" + curr_dir + "，去看看吧。")
-print("工具作者：@Sunbelife（新浪微博）")
-print("公众号：Sunbelife")
-print("感谢使用")
-print("v1.2")
-print("2019.4.18")

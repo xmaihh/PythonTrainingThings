@@ -1,4 +1,4 @@
-# encoding:utf-8
+# -*- coding: utf-8 -*-
 
 import base64
 import json
@@ -41,19 +41,18 @@ access_token: 开发者token
 '''
 
 
-def getBaiduFaceTech(imgPath, access_token):
+def get_baidu_face_tech(img_path, access_token):
     request_url = "https://aip.baidubce.com/rest/2.0/douyin/v3/detect"
     # 二进制方式打开图片文件
-    f = open(imgPath, 'rb')
+    f = open(img_path, 'rb')
     # 图片转换成base64
     img = base64.b64encode(f.read())
     # params = {"face_fields": "age,beauty,expression,faceshape,gender,glasses,landmark,race,qualities", "image": img,
     #          "max_face_num": 5}
     # params = {"image": img,"image_type":"BASE64","face_field": "age,beauty,expression,face_shape,gender,glasses,landmark,race,quality,face_type"}
-    params = {"image": img, "image_type": "BASE64", "face_field": "age,beauty,expression,face_shape,gender,glasses,landmark,race,quality,face_type"}
+    params = {"image": img, "image_type": "BASE64",
+              "face_field": "age,beauty,expression,face_shape,gender,glasses,landmark,race,quality,face_type"}
     print("base64编码    \t" + str(img))
-
-
 
     params = urllib.parse.urlencode(params).encode(encoding='utf-8')
     request_url = request_url + "?access_token=" + access_token
@@ -65,7 +64,6 @@ def getBaiduFaceTech(imgPath, access_token):
     File = open("hello.json", "w")
     File.write(str(face_info) + "\n")
     File.close()
-
 
     if face_json["error_code"] != 0:
         print(face_json["error_msg"] + face_info)
@@ -101,6 +99,7 @@ def getBaiduFaceTech(imgPath, access_token):
         else:
             print("图片中没有发现人物")
 
+
 if __name__ == '__main__':
     # print('开始截屏')
     # getdouyinimg()
@@ -109,4 +108,4 @@ if __name__ == '__main__':
     host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=CU0o7lOtAlxGODIxS9UUz2ZX&client_secret=8bd1pnjYbRMQO6rtA708tazfwe6QYfaU '
     token = get_token(host)
     # 调用百度人脸识别API
-    face_dict = getBaiduFaceTech("douyin.jpg", token)
+    face_dict = get_baidu_face_tech("douyin.jpg", token)

@@ -1,11 +1,12 @@
-# -*-coding=utf-8-*-
+# -*- coding: utf-8 -*-
 import os
 import re
 import time
 from urllib.parse import urljoin
-from selenium import webdriver
+
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
 from url_decode import urldecode
 
 
@@ -232,6 +233,7 @@ class GovSpider:
         self.download_js(html)
         self.download_imgs(html, css_links)
 
+
 if __name__ == '__main__':
-        gs = GovSpider()
-        gs.start_page()
+    gs = GovSpider()
+    gs.start_page()

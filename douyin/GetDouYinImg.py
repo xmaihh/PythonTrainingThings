@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 import os
 
 from PIL import Image
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=CU0o7lOtAlxGODIxS9UUz2ZX&client_secret=8bd1pnjYbRMQO6rtA708tazfwe6QYfaU '
     token = get_token(host)
     # 调用百度人脸识别API
-    face_dict = getBaiduFaceTech("douyin.jpg", token)
+    face_dict = get_baidu_face_tech("douyin.jpg", token)
     # 得到的数据进行分析
     # faceinfoAnalysis(face_dict)
 

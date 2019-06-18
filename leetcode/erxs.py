@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import itertools
 
 
@@ -5,7 +6,6 @@ class Solution:
     def get(self):
         for i in itertools.permutations('qwer', 4):
             print(''.join(i))
-
 
 class Solutio:
     def computeArea(A, B, C, D, E, F, G, H):
@@ -31,5 +31,5 @@ class Solutio:
 
 
 if __name__ == '__main__':
-        Solution.get(Solution)
-        print(Solutio.computeArea(9,8,7,6,5,4,3,2))
+    Solution.get(Solution)
+    print(Solutio.computeArea(9, 8, 7, 6, 5, 4, 3, 2))

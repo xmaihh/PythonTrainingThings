@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 import urllib.request
+
 from bs4 import BeautifulSoup
 from colorama import init, Fore  # init是初始化，Fore是字体颜色
 
 
-def get():
+def start():
     init(autoreset=True)  # 初始化
     root_url = 'https://wannianrili.51240.com/'
     response = urllib.request.urlopen(root_url)
@@ -21,8 +23,8 @@ def get():
             print(detail[i].find(class_='wnrl_k_you_id_biaoti').get_text())
             print(detail[i].find(class_='wnrl_k_you_id_wnrl_nongli').get_text() + '\n')
             tmp = detail[i].find(class_='wnrl_k_you_id_wnrl_jieri_biaoti')
-            if(tmp!=None):
-                print(Fore.GREEN + detail[i].find(class_='wnrl_k_you_id_wnrl_jieri_biaoti').get_text() )
+            if (tmp != None):
+                print(Fore.GREEN + detail[i].find(class_='wnrl_k_you_id_wnrl_jieri_biaoti').get_text())
                 print(Fore.WHITE + detail[i].find(class_='wnrl_k_you_id_wnrl_jieri_neirong').get_text() + '\n')
             print(Fore.CYAN + detail[i].find(class_='wnrl_k_you_id_wnrl_yi_biaoti').get_text() + '\r')
             print(Fore.BLUE + detail[i].find(class_='wnrl_k_you_id_wnrl_yi_neirong').get_text() + '\n')
@@ -32,4 +34,4 @@ def get():
 
 
 if __name__ == '__main__':
-    get()
+    start()
