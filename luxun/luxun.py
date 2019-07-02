@@ -167,14 +167,20 @@ class GetSentence:
         for content in all_content:
             try:
                 sentence = content.find('a', class_="xlistju").get_text()  # 句子
-                sentence = re.escape(sentence)  # 转义处理 对字符串中所有的非字母（ASCII letters）、数字（numbers）及下划线（'_'）的字符前都加反斜线\
+                # sentence = re.escape(sentence)  # 转义处理 对字符串中所有的非字母（ASCII letters）、数字（numbers）及下划线（'_'）的字符前都加反斜线\
+                sentence = sentence.replace("\\", "\\\\")
+                sentence = sentence.replace("'", "\\'")
+                sentence = sentence.replace('"', '\\"')
             except Exception:
                 sentence = " "
 
             try:
                 origin = content.find('a', class_="active").get_text()  # 出处(可能为空)
                 origin = "《" + origin + "》"
-                origin = re.escape(origin)  # 转义处理
+                # origin = re.escape(origin)  # 转义处理
+                origin = origin.replace("\\", "\\\\")
+                origin = origin.replace("'", "\\'")
+                origin = origin.replace('"', '\\"')
             except Exception:
                 origin = "  "
             author = "鲁迅"
