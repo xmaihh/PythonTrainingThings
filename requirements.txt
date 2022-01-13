@@ -1,6 +1,6 @@
 pymysql
 requests==2.21.0
-Pillow==5.4.1
+Pillow==9.0.0
 beautifulsoup4==4.7.1
 colorama==0.4.1
 selenium==3.141.0
